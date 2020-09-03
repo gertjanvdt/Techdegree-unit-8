@@ -3,14 +3,26 @@
     font-family: 'Slabo 27px', serif;
 }
 
+html {
+    background: #ededed;;
+}
+
 main {
     width: 90%;
     margin: auto;
     font-size: 13px;
 }
 
+header {
+    margin: 2em 0;
+}
+
 h1 {
     text-align: center;
+}
+
+p {
+    color: grey;
 }
 
 .grid-container {
@@ -28,10 +40,11 @@ img {
 .card {
     display: flex;
     align-items: center;
-    border: 1px black solid;
+    border: 1px grey solid;
     border-radius: 8px;
     margin: 1em auto;
     width: 100%;
+    background: white;
 }
 
 @media (min-width: 768px) {
