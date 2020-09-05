@@ -1,10 +1,15 @@
+/* GENRAL PAGE STYLES */
 * {
     box-sizing: border-box;
     font-family: 'Slabo 27px', serif;
 }
 
-html {
+/* html {
     background: #ededed;;
+} */
+
+body {
+    position: relative;
 }
 
 header {
@@ -34,6 +39,7 @@ img {
     margin: 1em;
 }
 
+/* MODAL STYLING */
 .card {
     display: flex;
     align-items: center;
@@ -45,13 +51,43 @@ img {
     background: white;
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4)
+}
+
+.modal {
+    width: 90%;
+    max-width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+    }
+
+.hidden {
+    display: none;
+}
+
+/* GRID LAYOUT PER WIDTH */
+
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .card {
-        width: 300px;
     }
 }
 
