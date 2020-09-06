@@ -14,6 +14,15 @@ body {
 
 header {
     margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    border-radius: 8px;
+    border: 1px solid grey;
+    outline: none;
 }
 
 h1 {

@@ -9,16 +9,19 @@ const modalClose = document.querySelector('.modal-close');
 
 // FETCH API
 fetch(urlAPI)
+    // .then(res => console.log(res))
     .then(res => res.json())
+    .then(res => console.log(res))
     .then(res => res.results)
     .then(displayEmployees)
-    .catch(err => console.log(err))
+    .then()
+    // .catch(err => console.log(err))
 
 // FUNCTIONS
 function displayEmployees(employeeData) {
     employees = employeeData;
 
-    let employeeHTML;
+    let employeeHTML = '';
 
     employees.forEach((employee, index) => {
         let name = employee.name;
@@ -37,6 +40,8 @@ function displayEmployees(employeeData) {
             </div>
         `
     });
+
+    console.log(employeeHTML);
 };
 
 function displayModal(index) {
