@@ -4,16 +4,13 @@
     font-family: 'Slabo 27px', serif;
 }
 
-/* html {
-    background: #ededed;;
-} */
-
 body {
     position: relative;
+    height: 100%;
+    background: #ededed;;
 }
 
 header {
-    margin: 2em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +20,16 @@ input {
     border-radius: 8px;
     border: 1px solid grey;
     outline: none;
+}
+
+button{
+    border-radius: 8px;
+    background: white;
+    width: 2em;
+}
+
+label {
+    font-size: 1.3em;
 }
 
 h1 {
@@ -40,6 +47,10 @@ p {
     width: 90%;
     margin: auto;
     font-size: 13px;
+}
+
+.text-container {
+    word-break: break-word;
 }
 
 img {
@@ -86,7 +97,12 @@ img {
     right: 15px;
     top: 5px;
     cursor: pointer;
-    }
+}
+
+#navigate {
+    display: flex;
+    justify-content: space-between;
+}
 
 .hidden {
     display: none;

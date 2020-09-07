@@ -6,148 +6,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Startup Employee Directory</title>
+    <title>Awesome Startup Employee Directory</title>
 </head>
 <body>
+    <!-- HEADER WITH NAME AND SEARCHBOX -->
     <header>
         <div>
-            <h1>Startup Employee Directory</h1>
+            <h1>Awesome Startup Employee Directory</h1>
         </div>
         <div>
             <label for="search">Search employee: </label>
             <input type="text" id="search" placeholder="Search">
         </div>
-
     </header>
 
+    <!-- MAIN THAT WILL BE FILLED WITH EMPLOYEE CARDS BY JS -->
     <main class="grid-container">
-
-        <div class="card">
-            <img src="images/member-1.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Victoria Chambers</h2>
-                <p class="email">vchambers@yourapp.com</p>
-                <p class="address">New York</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-2.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dale Byrd</h2>
-                <p class="email">dbyrd@yourapp.com</p>
-                <p class="address">Chicago</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-3.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dawn Wood</h2>
-                <p class="email">dwood@yourapp.com</p>
-                <p class="address">Miami</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-4.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dan Oliver</h2>
-                <p class="email">doliver@yourapp.com</p>
-                <p class="address">Portland</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-1.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Victoria Chambers</h2>
-                <p class="email">vchambers@yourapp.com</p>
-                <p class="address">New York</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-2.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dale Byrd</h2>
-                <p class="email">dbyrd@yourapp.com</p>
-                <p class="address">Chicago</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-3.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dawn Wood</h2>
-                <p class="email">dwood@yourapp.com</p>
-                <p class="address">Miami</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-4.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dan Oliver</h2>
-                <p class="email">doliver@yourapp.com</p>
-                <p class="address">Portland</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/member-1.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Victoria Chambers</h2>
-                <p class="email">vchambers@yourapp.com</p>
-                <p class="address">New York</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-2.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dale Byrd</h2>
-                <p class="email">dbyrd@yourapp.com</p>
-                <p class="address">Chicago</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-3.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dawn Wood</h2>
-                <p class="email">dwood@yourapp.com</p>
-                <p class="address">Miami</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/member-4.jpg" alt="">
-            <div class="text-container">
-                <h2 class="name">Dan Oliver</h2>
-                <p class="email">doliver@yourapp.com</p>
-                <p class="address">Portland</p>
-            </div>
-        </div>
+        <!-- Here goes the content recieved from the API -->
     </main>
 
+    <!-- MODAL THAT WILL OVERLAY WITH MORE DETAILS OF EMPLOYEE -->
     <div class="overlay hidden">
         <div class="modal">
             <button class="modal-close">X</button>
             <div class="modal-content">
-                <img class="avatar" src="images/member-1.jpg" alt="">
-                <div class="text-container">
-                    <h2 class="name">Victoria Chambers</h2>
-                    <p class="email">vchambers@yourapp.com</p>
-                    <p class="address">New York</p>
-                    <hr>
-                    <p class="phone">123 - 456 789</p>
-                    <p class="address">123 Fake Road, CA 199597</p>
-                    <p class="birthday">Birthday: 1-1-1980</p>
-
-                </div>
+                <!-- Modal inserted via JS -->
             </div>
+            <div id="navigate">
+                <button id="left" class="btn">&#8249;</button>
+                <button id="right" class="btn">&#8250;</button>
+             </div>
         </div>
     </div>
+    <!-- END OF MODAL -->
+
+    <!-- JAVASCRIPT -->
     <script src="app.js"></script>
 </body>
 </html>

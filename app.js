@@ -1,4 +1,5 @@
-// GLOBAL VARIABLES
+// ***** GLOBAL VARIABLES *****
+
 let employees = [];
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
@@ -6,18 +7,22 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const search = document.getElementById('search');
+const navigate = document.getElementById('navigate');
+let index = 0;
 
-// FETCH API
+
+// ***** FETCH API *****
+
 fetch(urlAPI)
-    // .then(res => console.log(res))
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .then(res => res.results)
-    .then(displayEmployees)
-    .then()
-    // .catch(err => console.log(err))
+   .then((res) => res.json())
+   .then((res) => res.results)
+   .then(displayEmployees)
+   .catch((err) => console.log(err));
 
-// FUNCTIONS
+// ***** FUNCTIONS *****
+
+// Function to create HTML per employee
 function displayEmployees(employeeData) {
     employees = employeeData;
 
@@ -41,9 +46,10 @@ function displayEmployees(employeeData) {
         `
     });
 
-    console.log(employeeHTML);
+    gridContainer.innerHTML = employeeHTML;
 };
 
+// Function to create modal content
 function displayModal(index) {
     let { name, dob, phone, email, location: { city, street, state, postcode
     }, picture } = employees[index];
@@ -69,15 +75,54 @@ modalContainer.innerHTML = modalHTML;
 
 };
 
-// EVENT LISTENERS
+// function to filter on employee
+function filter() {
+    const employeeCards = document.querySelectorAll('.card');
+    let searchInput = search.value.toUpperCase();
+
+    employeeCards.forEach((card) => {
+        let name = card.querySelector('.name').innerHTML.toUpperCase();
+
+        if (name.indexOf(searchInput) > -1)  {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Function to change modal to the left or the right
+function changeModal(direction) {
+    if (direction === 'left' && parseInt(index) > 0) {
+        index = parseInt(index) - 1
+    } else if (direction === 'right' && parseInt(index) < 11) {
+        index = parseInt(index) + 1
+    }
+    displayModal(index);
+};
+
+// ***** EVENT LISTENERS *****
+
+// Listen for event to click on card and open Modal
 gridContainer.addEventListener('click', (e) => {
     if (e.target !== gridContainer) {
         const card = e.target.closest(".card");
-        const index = card.getAttribute('data-index');
+        index = card.getAttribute('data-index');
         displayModal(index);
     }
 });
 
+// Listen for click on x to close modal
 modalClose.addEventListener('click', (e) => {
     overlay.classList.add('hidden');
 });
+
+// Listen for input and use it to filter
+search.addEventListener('input', (e) => filter());
+
+// Listen to navigate buttons in Modal
+navigate.addEventListener('click', (e) => {
+    changeModal(e.target.id);
+});
+
+
